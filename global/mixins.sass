@@ -1,0 +1,115 @@
+@mixin radius($number) {
+	-webkit-border-radius: $number;
+	-moz-border-radius: $number;
+	-ms-border-radius: $number;
+	-o-border-radius: $number;
+	border-radius: $number;
+}
+
+@mixin transition($prop) {
+	-webkit-transition: $prop;
+	-moz-transition: $prop;
+	-ms-transition: $prop;
+	-o-transition: $prop;
+	transition: $prop;
+}
+
+@mixin delay($sec) {
+	-webkit-transition-delay: $sec;
+	-moz-transition-delay: $sec;
+	-ms-transition-delay: $sec;
+	-o-transition-delay: $sec;
+	transition-delay: $sec;
+}
+
+@mixin duration($sec) {
+	-webkit-transition-duration: $sec;
+	-moz-transition-duration: $sec;
+	-ms-transition-duration: $sec;
+	-o-transition-duration: $sec;
+	transition-duration: $sec;
+}
+
+
+@mixin shadow($property) {
+	-webkit-box-shadow: $property;
+	-moz-box-shadow: $property;
+	-ms-box-shadow: $property;
+	-o-box-shadow: $property;
+	box-shadow: $property;
+}
+
+@mixin shadow-inset($property) {
+	-webkit-box-shadow: $property inset;
+	-moz-box-shadow: $property inset;
+	-ms-box-shadow: $property inset;
+	-o-box-shadow: $property inset;
+	box-shadow: $property inset;
+}
+
+@mixin multi-shadow($property1, $property2) {
+	-webkit-box-shadow: $property1, $property2;
+	-moz-box-shadow: $property1, $property2;
+	-ms-box-shadow: $property1, $property2;
+	-o-box-shadow: $property1, $property2;
+	box-shadow: $property1, $property2;
+}
+
+@mixin box-sizing($property) {
+	-webkit-box-sizing: $property;
+	-moz-box-sizing: $property;
+	-ms-box-sizing: $property;
+	-o-box-sizing: $property;
+	box-sizing: $property;
+}
+
+@mixin columns($data) {
+	-webkit-columns: $data;
+	-moz-columns: $data;
+	-ms-columns: $data;
+	-o-columns: $data;
+	columns: $data;
+}
+
+@mixin linear-gradient($direction: 'to bottom', $args: '#fff, #000', $fallback: null) {
+
+	$directions: helper-gradient-angle($direction);
+
+	background: $fallback -webkit-linear-gradient(unquote($directions), unquote($args));
+	background:    $fallback -moz-linear-gradient(unquote($directions), unquote($args));
+	background:     $fallback -ms-linear-gradient(unquote($directions), unquote($args));
+	background:      $fallback -o-linear-gradient(unquote($directions), unquote($args));
+	background:          $fallback linear-gradient(unquote($direction), unquote($args));
+	background-color: $fallback;
+}
+
+@mixin opacity( $opacity ) {
+	$opacity_ie: $opacity * 100;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$opacity_ie)"; /* IE 8 */
+	filter: alpha(opacity=$opacity_ie); /* IE 5-7 */
+	-khtml-opacity: $opacity;
+		-moz-opacity: $opacity;
+			 opacity: $opacity;
+}
+
+@mixin keyframes($name) {
+	@-webkit-keyframes $name {
+		@content;
+	}
+	@-moz-keyframes $name {
+		@content;
+	}
+	@-o-keyframes $name {
+		@content;
+	}
+	@keyframes $name {
+		@content;
+	}
+}
+
+@mixin animation($property) {
+	-webkit-animation: $property;
+	-moz-animation: $property;
+	-o-animation: $property;
+	animation: $property;
+}
