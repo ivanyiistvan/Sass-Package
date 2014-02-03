@@ -30,6 +30,19 @@
 	transition-duration: $sec;
 }
 
+@mixin keyframes($name) {
+	@-webkit-keyframes $name { @content }
+	@-moz-keyframes $name { @content }
+	@-o-keyframes $name { @content }
+	@keyframes $name { @content }
+}
+
+@mixin animation($property) {
+	-webkit-animation: $property;
+	-moz-animation: $property;
+	-o-animation: $property;
+	animation: $property;
+}
 
 @mixin shadow($property) {
 	-webkit-box-shadow: $property;
@@ -92,24 +105,9 @@
 			 opacity: $opacity;
 }
 
-@mixin keyframes($name) {
-	@-webkit-keyframes $name {
-		@content;
-	}
-	@-moz-keyframes $name {
-		@content;
-	}
-	@-o-keyframes $name {
-		@content;
-	}
-	@keyframes $name {
-		@content;
-	}
-}
-
-@mixin animation($property) {
-	-webkit-animation: $property;
-	-moz-animation: $property;
-	-o-animation: $property;
-	animation: $property;
+@mixin placeholder {
+	::-webkit-input-placeholder {@content}
+	:-moz-placeholder           {@content}
+	::-moz-placeholder          {@content}
+	:-ms-input-placeholder      {@content}
 }
